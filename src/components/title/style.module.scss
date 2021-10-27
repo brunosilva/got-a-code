@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  .option1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 0.5rem;
+
+      strong {
+        font-size: 2rem;
+      }
+    }
+
+    .description {
+      font-size: 0.875rem;
+    }
+  }
+}
