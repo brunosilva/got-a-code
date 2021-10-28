@@ -19,6 +19,7 @@ const Title: React.FC<IProps> = ({ title, subtitle, description }) => {
         </span>
         <span className={style.description}>{description}</span>
       </div>
+
     </div>
   )
 }

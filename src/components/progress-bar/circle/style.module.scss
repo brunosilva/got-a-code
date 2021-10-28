@@ -1,0 +1,135 @@
+@import 'mixin';
+@import '../../../style/global/variables';
+
+.progressBar {
+  .messageError {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--white);
+
+    .outer {
+      border-radius: 50%;
+      padding: 10px;
+
+      .inner {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        background: var(--gray-500);
+        justify-content: center;
+        // box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        //   inset 0px 0px 0px 4px rgba(255, 255, 255, 0.7),
+        //   -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        //   0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        //   0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  .skill {
+    width: 150px;
+    height: 150px;
+    position: relative;
+
+    .outer {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      padding: 10px;
+      // box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+      //   -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+      .inner {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        background: var(--blue-500);
+        justify-content: center;
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+          inset 0px 0px 0px 4px rgba(255, 255, 255, 0.7),
+          -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+          0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+          0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+
+        .bgMiddle {
+          color: var(--white);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+
+          img {
+            width: 80px;
+          }
+        }
+      }
+
+      #number {
+        font-weight: 600;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  // keyframes references -------------------------
+  //   empty    = 0% { stroke-dashoffset: 500; }
+  //   ten      = 9% { stroke-dashoffset: 429; }
+  //   twenty   = 22% { stroke-dashoffset: 358; }
+  //   thirty   = 35% { stroke-dashoffset: 287; }
+  //   fourty   = 48% { stroke-dashoffset: 216; }
+  //   fifty    = 61% { stroke-dashoffset: 145; }
+  //   sixty    = 74% { stroke-dashoffset: 74; }
+  //   seventy  = 87% { stroke-dashoffset: 225; }
+  //   hundred  = 100% { stroke-dashoffset: 174; }
+  // ----------------------------------------------
+
+  > .empty {
+    @include setAnimationProgress(empty, 500);
+  }
+
+  > .ten {
+    @include setAnimationProgress(ten, 429);
+  }
+
+  > .twenty {
+    @include setAnimationProgress(twenty, 358);
+  }
+
+  > .thirty {
+    @include setAnimationProgress(thirty, 287);
+  }
+
+  > .fourty {
+    @include setAnimationProgress(fourty, 216);
+  }
+
+  > .fifty {
+    @include setAnimationProgress(fifty, 145);
+  }
+
+  > .sixty {
+    @include setAnimationProgress(sixty, 74);
+  }
+
+  > .seventy {
+    @include setAnimationProgress(seventy, 0);
+  }
+
+  > .hundred {
+    @include setAnimationProgress(hundred, 0);
+  }
+}

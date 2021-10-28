@@ -1,0 +1,16 @@
+@mixin setAnimationProgress($name, $value) {
+  circle {
+    fill: none;
+    stroke: var(--gray-500);
+    stroke-width: 5px;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: $name 2s linear forwards;
+  }
+
+  @keyframes #{$name} {
+    100% {
+      stroke-dashoffset: $value;
+    }
+  }
+}

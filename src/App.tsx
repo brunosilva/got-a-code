@@ -1,4 +1,5 @@
 import React from 'react'
+import Circle from './components/progress-bar/circle'
 import Title from './components/title'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
           subtitle="CODE"
           description="exemplos de códigos para componentes ReactJs"
         />
+        <Circle completed={1} />
       </header>
     </div>
   )
