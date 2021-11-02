@@ -14,11 +14,7 @@ const ComponentList: React.FC = () => {
       <div className={style.component}>
         <div className={style.titleComponent}>Exemplo de Título</div>
         <div className={style.componentView}>
-          <Title
-            title="Got a"
-            subtitle="CODE"
-            description="exemplos de códigos para componentes ReactJs"
-          />
+          <Title title="Got a" subtitle="<code>" description="" />
         </div>
       </div>
       <div className={style.component}>

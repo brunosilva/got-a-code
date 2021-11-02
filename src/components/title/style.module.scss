@@ -2,23 +2,48 @@
   display: flex;
   justify-content: center;
 
-  .option1 {
+  .option {
     display: flex;
     justify-content: center;
-    flex-direction: column;
 
     .title {
+      width: 300px;
       font-size: 1rem;
       font-weight: 600;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
-
+      align-items: center;
       margin-bottom: 0.5rem;
+      overflow: hidden;
 
       strong {
+        font-family: 'Source Code Pro', monospace;
         font-size: 2rem;
+        margin-left: 0.25rem;
       }
+    }
+
+    .title::before,
+    .title::after {
+      background-color: #000;
+      content: '';
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+    }
+    .title:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    /* Aqui configuramos o estilo
+       da linha direita (after)
+    */
+    .title:after {
+      left: 0.5em;
+      margin-right: -50%;
     }
 
     .description {

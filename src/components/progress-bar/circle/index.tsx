@@ -56,7 +56,6 @@ const Circle: React.FC<IProps> = ({ completed }) => {
 
   return (
     <div className={style.progressBar}>
-      <span className={style.title}>Progress bar component</span>
       {isValidCompleted ? (
         <div className={`${handleProgress}`} id="handleProgress">
           <div className={style.outer}>
