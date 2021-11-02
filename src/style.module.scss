@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+
+  .component {
+    width: 20rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--grey-200);
+
+    &:hover {
+      border: 1px solid var(--grey-500);
+    }
+
+    .titleComponent {
+      background: var(--grey-900);
+      border-radius: 5px 5px 0 0;
+      color: var(--grey-200);
+      padding: 0.5rem 0;
+    }
+
+    .componentView {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+
+      height: 12.5rem;
+    }
+  }
+}
