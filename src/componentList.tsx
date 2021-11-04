@@ -4,6 +4,7 @@ import React from 'react'
 // components
 import Circle from './components/progress-bar/circle'
 import Title from './components/title'
+import Tooltip from './components/tooltip'
 
 // styles
 import style from './style.module.scss'
@@ -23,6 +24,16 @@ const ComponentList: React.FC = () => {
         </div>
         <div className={style.componentView}>
           <Circle completed={1} />
+        </div>
+      </div>
+      <div className={style.component}>
+        <div className={style.titleComponent}>
+          Exemplo de Tooltip (com e sem icone)
+        </div>
+        <div className={style.componentView}>
+          <Tooltip title="Este campo é obrigatório" showIcon={true}>
+            <label>Código</label>
+          </Tooltip>
         </div>
       </div>
     </div>
