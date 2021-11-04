@@ -16,6 +16,14 @@ const ComponentList: React.FC = () => {
         <div className={style.titleComponent}>Exemplo de Título</div>
         <div className={style.componentView}>
           <Title title="Got a" subtitle="<code>" description="" />
+          <a
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/title"
+            target="_blank"
+            rel="noreferrer"
+            title=""
+          >
+            code github
+          </a>
         </div>
       </div>
       <div className={style.component}>
@@ -24,6 +32,14 @@ const ComponentList: React.FC = () => {
         </div>
         <div className={style.componentView}>
           <Circle completed={1} />
+          <a
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/progress-bar/circle"
+            target="_blank"
+            rel="noreferrer"
+            title=""
+          >
+            code github
+          </a>
         </div>
       </div>
       <div className={style.component}>
@@ -34,6 +50,14 @@ const ComponentList: React.FC = () => {
           <Tooltip title="Este campo é obrigatório" showIcon={true}>
             <label>Código</label>
           </Tooltip>
+          <a
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/tooltip"
+            target="_blank"
+            rel="noreferrer"
+            title=""
+          >
+            code github
+          </a>
         </div>
       </div>
     </div>

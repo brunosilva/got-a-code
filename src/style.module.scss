@@ -23,9 +23,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       padding: 1rem;
+      position: relative;
 
       height: 12.5rem;
+
+      a {
+        font-size: 0.75rem;
+
+        color: var(--grey-700);
+        position: absolute;
+        bottom: 5px;
+
+        &:hover {
+          color: var(--black);
+        }
+      }
     }
   }
 }
