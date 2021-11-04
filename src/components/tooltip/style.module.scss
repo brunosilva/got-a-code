@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: black;
+
+  .tooltip {
+    position: relative;
+
+    .label {
+      display: flex;
+    }
+    .iconInfo {
+      width: 15px;
+      height: 15px;
+      font-size: 10px;
+      border-radius: 50%;
+      background: #ff9000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 3px;
+
+      .icon {
+        color: white;
+      }
+    }
+
+    .notIcon {
+      width: 160px;
+      background: #ff9000;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.4s;
+      visibility: hidden;
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      color: #312e38;
+
+      &::before {
+        content: '';
+        border-style: solid;
+        border-color: #ff9000 transparent;
+        border-width: 6px 6px 0 6px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+      }
+    }
+    &:hover .notIcon {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .haveIcon {
+      width: 160px;
+      background: #ff9000;
+      padding: 8px;
+      border-radius: 6px 6px 6px 0;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.4s;
+      visibility: hidden;
+      position: absolute;
+      bottom: 20px;
+      right: -245px;
+      transform: translateX(-50%);
+      color: #312e38;
+
+      &::before {
+        content: '';
+        border-style: solid;
+        border-color: #ff9000 transparent;
+        border-width: 6px 6px 0 6px;
+        top: 84%;
+        left: 0%;
+        transform: rotate(45deg);
+        position: absolute;
+      }
+    }
+    &:hover .haveIcon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
