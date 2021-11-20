@@ -1,5 +1,6 @@
 // packages
 import React from 'react'
+import Accordion from './components/Accordion'
 
 // components
 import Circle from './components/progress-bar/circle'
@@ -12,6 +13,24 @@ import style from './style.module.scss'
 const ComponentList: React.FC = () => {
   return (
     <div className={style.container}>
+      <div className={style.component}>
+        <div className={style.titleComponent}>Exemplo de Accordion</div>
+        <div className={style.componentView}>
+          <Accordion title="Abrir accordion" subtitle="subtitle">
+            <div className={style.contentAccordion}>
+              <span>Conteudo do accordion</span>
+            </div>
+          </Accordion>
+          <a
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/title"
+            target="_blank"
+            rel="noreferrer"
+            title=""
+          >
+            code github
+          </a>
+        </div>
+      </div>
       <div className={style.component}>
         <div className={style.titleComponent}>Exemplo de Título</div>
         <div className={style.componentView}>
