@@ -26,10 +26,10 @@ const BarcodeValidate: React.FC = () => {
       toast.success('Obrigatório preencher todos os campos')
       // return isUpdate ? updateSavedCode(values) : handleAddBarCode(values)
     }
-  }, [])
+  }, [type])
 
   return (
-    <>
+    <div className={style.container}>
       <form onSubmit={handleSubmit}>
         <label>Código de barras</label>
         <input
@@ -44,8 +44,8 @@ const BarcodeValidate: React.FC = () => {
           Salvar
         </button>
       </form>
-      <div>{result}</div>
-    </>
+      <div className={statusError ? statusError : ''}>{result}</div>
+    </div>
   )
 }
 
