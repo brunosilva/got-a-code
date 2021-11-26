@@ -58,9 +58,9 @@ const Accordion: React.FC<IProps> = ({ title, subtitle, children }) => {
 
   return (
     <div className={style.container}>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="user" />
+      <div className={style.formContent}>
+        <form onSubmit={handleSubmit} className={style.form}>
+          <input type="text" name="user" className={style.input} />
           <button type="submit">Buscar</button>
         </form>
       </div>
