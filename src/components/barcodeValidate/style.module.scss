@@ -1,8 +1,24 @@
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  .message {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
 
   .statusError {
-    color: var(--error);
+    width: 100%;
+    padding: 1rem;
+    background: var(--error);
+    color: var(--black);
+  }
+  .statusSuccesss {
+    width: 100%;
+    padding: 1rem;
+    background: var(--success);
+    color: var(--black);
   }
 }
