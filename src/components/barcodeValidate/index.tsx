@@ -22,11 +22,11 @@ const BarcodeValidate: React.FC = () => {
 
       if (!barCodeValid) {
         setStyleCurrent(`${style.statusError} ${style.inputError}`)
-        setResult('cheguei no if')
+        setResult('EAN Inválido')
         setStyleStatus(styleCurrent)
       } else {
         setStyleCurrent(`${style.statusSuccesss} ${style.inputSuccess}`)
-        setResult('cheguei no else')
+        setResult('EAN Válido')
         setStyleStatus(styleCurrent)
 
         // Em caso de sucesso, deve fazer aqui a chamada na API.
