@@ -1,5 +1,7 @@
 // packages
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 // utils
 import { panels } from './utils'
@@ -15,25 +17,64 @@ interface IProps {
 }
 
 const Accordion: React.FC<IProps> = ({ title, subtitle, children }) => {
-  return (
-    // <div className="panel" role="tabpanel" aria-expanded={isActive}>
-    //   <button className="panel__label" role="tab" onClick={activateTab}>
-    //     {label}
-    //   </button>
-    //   <div className="panel__inner" style={innerStyle} aria-hidden={!isActive}>
-    //     <p className="panel__content">{content}</p>
-    //   </div>
-    // </div>
+  const [repositories, setRepositories] = useState([])
+  const [user, setUser] = useState('')
+  const [erro, setErro] = useState(false)
+  const history = useHistory()
 
-    // <div className={style.container}>
-    //   <button className={style.titleButtom} role="tab">
-    //     {title} <strong>{subtitle}</strong>
-    //   </button>
-    //   <div className={style.title}>
-    //     <div className={style.content}>{children}</div>
-    //   </div>
-    // </div>
-    <></>
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handlePesquisa = (repo: string) => {
+    axios
+      .get(`https://api.github.com/users/${repo}/repos`)
+      .then(response => {
+        const repos = response.data
+        setRepositories(repos)
+        console.log('repositories', repositories)
+        // const repositoriesName = []
+
+        // repositories.map(repository => {
+        //   repositoriesName.push(repository.name)
+        // })
+
+        // localStorage.setItem(
+        //   'repositoriesName',
+        //   JSON.stringify(repositoriesName)
+        // )
+        setErro(false)
+        // history.push('/repositories')
+      })
+      .catch(() => {
+        setErro(true)
+      })
+  }
+
+  const handleSubmit = useCallback(
+    value => {
+      console.log(value)
+      handlePesquisa(value)
+    },
+    [handlePesquisa]
+  )
+
+  return (
+    <div className={style.container}>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="user" />
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+
+      <div className={style.list}>
+        {repositories.map(repo => {
+          return (
+            <button className={style.titleButtom} role="tab">
+              {repo}
+            </button>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
