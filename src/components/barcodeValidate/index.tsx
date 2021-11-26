@@ -12,31 +12,27 @@ import 'react-toastify/dist/ReactToastify.css'
 const BarcodeValidate: React.FC = () => {
   const [styleStatus, setStyleStatus] = useState('')
   const [newBarcode, setNewBarcode] = useState<string>('')
+  const [styleCurrent, setStyleCurrent] = useState<string>('')
   const [result, setResult] = useState('')
   const [type, _] = useState('EAN')
 
   const handleSubmit = useCallback(
     values => {
       const barCodeValid = barCodeValidator(values, type)
-      console.log('barCodeValid', barCodeValid)
-      console.log('values.barcode', values.barcode)
+
       if (!barCodeValid) {
-        const styleCurrent = `${style.statusError} ${style.inputError}`
-        console.log('cheguei no if')
+        setStyleCurrent(`${style.statusError} ${style.inputError}`)
         setResult('cheguei no if')
         setStyleStatus(styleCurrent)
-        // toast.error('Verifique se o código está correto e tente novamente.')
       } else {
-        const styleCurrent = `${style.statusSuccesss} ${style.inputSuccess}`
-        // alert('barcode valido')
-        console.log('cheguei no else')
+        setStyleCurrent(`${style.statusSuccesss} ${style.inputSuccess}`)
         setResult('cheguei no else')
         setStyleStatus(styleCurrent)
-        // toast.success('Obrigatório preencher todos os campos')
-        // return isUpdate ? updateSavedCode(values) : handleAddBarCode(values)
+
+        // Em caso de sucesso, deve fazer aqui a chamada na API.
       }
     },
-    [type]
+    [styleCurrent, type]
   )
 
   useEffect(() => {
