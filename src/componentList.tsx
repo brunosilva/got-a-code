@@ -23,7 +23,7 @@ const ComponentList: React.FC = () => {
             </div>
           </Accordion>
           <a
-            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/title"
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/Accordion"
             target="_blank"
             rel="noreferrer"
             title=""
@@ -37,7 +37,7 @@ const ComponentList: React.FC = () => {
         <div className={style.componentView}>
           <BarcodeValidate />
           <a
-            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/title"
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/barcodeValidate"
             target="_blank"
             rel="noreferrer"
             title=""
