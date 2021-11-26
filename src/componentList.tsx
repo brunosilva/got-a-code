@@ -1,6 +1,7 @@
 // packages
 import React from 'react'
 import Accordion from './components/Accordion'
+import BarcodeValidate from './components/barcodeValidate'
 
 // components
 import Circle from './components/progress-bar/circle'
@@ -21,6 +22,20 @@ const ComponentList: React.FC = () => {
               <span>Conteudo do accordion</span>
             </div>
           </Accordion>
+          <a
+            href="https://github.com/brunosilva/got-a-code/tree/main/src/components/title"
+            target="_blank"
+            rel="noreferrer"
+            title=""
+          >
+            code github
+          </a>
+        </div>
+      </div>
+      <div className={style.component}>
+        <div className={style.titleComponent}>Validar código de barra</div>
+        <div className={style.componentView}>
+          <BarcodeValidate />
           <a
             href="https://github.com/brunosilva/got-a-code/tree/main/src/components/title"
             target="_blank"

@@ -16,14 +16,14 @@ interface IProps {
 
 const Accordion: React.FC<IProps> = ({ title, subtitle, children }) => {
   return (
-    <div className="panel" role="tabpanel" aria-expanded={isActive}>
-      <button className="panel__label" role="tab" onClick={activateTab}>
-        {label}
-      </button>
-      <div className="panel__inner" style={innerStyle} aria-hidden={!isActive}>
-        <p className="panel__content">{content}</p>
-      </div>
-    </div>
+    // <div className="panel" role="tabpanel" aria-expanded={isActive}>
+    //   <button className="panel__label" role="tab" onClick={activateTab}>
+    //     {label}
+    //   </button>
+    //   <div className="panel__inner" style={innerStyle} aria-hidden={!isActive}>
+    //     <p className="panel__content">{content}</p>
+    //   </div>
+    // </div>
 
     // <div className={style.container}>
     //   <button className={style.titleButtom} role="tab">
@@ -33,6 +33,7 @@ const Accordion: React.FC<IProps> = ({ title, subtitle, children }) => {
     //     <div className={style.content}>{children}</div>
     //   </div>
     // </div>
+    <></>
   )
 }
 

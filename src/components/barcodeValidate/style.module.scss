@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .message {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .statusError {
+    width: 100%;
+    padding: 1rem;
+    opacity: 0.6;
+    border: 1px solid var(--error);
+    border-radius: 6px;
+    background: var(--error);
+    color: var(--black);
+  }
+  .statusSuccesss {
+    width: 100%;
+    padding: 1rem;
+    opacity: 0.6;
+    border: 1px solid var(--success);
+    border-radius: 6px;
+    background: var(--success);
+    color: var(--black);
+  }
+}

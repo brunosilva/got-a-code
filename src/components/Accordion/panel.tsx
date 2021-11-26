@@ -30,7 +30,7 @@ const Accordion: React.FC<IProps> = ({ isActive, label, content }) => {
       <button
         className="panel__label"
         role="tab"
-        onClick={activateTab(this.index)}
+        // onClick={activateTab(this.index)}
       >
         {label}
       </button>
