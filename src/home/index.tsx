@@ -12,10 +12,13 @@ const Home: React.FC<IProps> = ({ children }) => {
     <div className={style.container}>
       <div className={style.menus}>
         <div className={style.name}>
-          <span className={style.first}>GOT A</span>
+          <span className={style.first}></span>
           <span className={style.second}>{'<code>'}</span>
         </div>
         <div className={style.contact}>
+          <div className={style.dev}>
+            <span>Bruno Silva</span>
+          </div>
           <div className={style.social}>
             <a
               href="https://www.linkedin.com/in/bruno-silva0109/"
@@ -31,9 +34,6 @@ const Home: React.FC<IProps> = ({ children }) => {
             >
               Github
             </a>
-          </div>
-          <div className={style.dev}>
-            <span>Bruno Silva</span>
           </div>
         </div>
       </div>

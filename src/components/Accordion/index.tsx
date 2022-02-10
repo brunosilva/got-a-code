@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 // utils
 import { panels } from './utils'
+import TableList from './table'
 
 // styles
 import style from './style.module.scss'
@@ -28,6 +29,11 @@ const Accordion: React.FC<IProps> = ({ title, subtitle, children }) => {
       .get(`https://api.github.com/users/${repo}/repos`)
       .then(response => {
         const repos = response.data
+
+        const formattedValues = {
+          title: repos.title,
+          description: repos.description
+        }
         setRepositories(repos)
         console.log('repositories', repositories)
         // const repositoriesName = []
@@ -65,15 +71,7 @@ const Accordion: React.FC<IProps> = ({ title, subtitle, children }) => {
         </form>
       </div>
 
-      <div className={style.list}>
-        {repositories.map(repo => {
-          return (
-            <button className={style.titleButtom} role="tab">
-              {repo}
-            </button>
-          )
-        })}
-      </div>
+      <TableList repositories={repositories} />
     </div>
   )
 }

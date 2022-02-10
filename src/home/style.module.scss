@@ -6,33 +6,25 @@
     height: calc(100vh - 1rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     .name {
       display: flex;
-      flex-direction: column;
       text-align: start;
       color: var(--white);
+      font-size: 1.5rem;
 
       .first {
-        font-family: 'Bungee Shade', cursive;
-        font-size: 5rem;
-        line-height: 4rem;
-      }
-      .second {
-        font-family: 'Major Mono Display', monospace;
-        font-size: 6rem;
-        text-transform: lowercase;
+        margin-right: 10px;
       }
     }
     .contact {
       .social {
         font-family: 'Roboto', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1rem;
 
         & > a {
           color: var(--grey-800);
-          margin: 0 1rem;
+          margin: 0 0.5rem;
           text-decoration: none;
 
           &:hover {
@@ -42,9 +34,8 @@
         }
       }
       .dev {
-        font-family: 'Montserrat Subrayada', sans-serif;
         color: var(--white);
-        font-size: 3rem;
+        font-size: 1.5rem;
       }
     }
   }
