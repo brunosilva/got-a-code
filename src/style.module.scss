@@ -1,47 +1,6 @@
 .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
-
-  .component {
-    width: 20rem;
-    margin: 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--grey-200);
-    background: var(--white);
-
-    &:hover {
-      border: 1px solid var(--grey-500);
-    }
-
-    .titleComponent {
-      background: var(--grey-900);
-      border-radius: 5px 5px 0 0;
-      color: var(--grey-200);
-      padding: 0.5rem 0;
-    }
-
-    .componentView {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 1rem;
-      position: relative;
-
-      height: 12.5rem;
-
-      a {
-        font-size: 0.75rem;
-
-        color: var(--grey-700);
-        position: absolute;
-        bottom: 5px;
-
-        &:hover {
-          color: var(--black);
-        }
-      }
-    }
-  }
+  
 }

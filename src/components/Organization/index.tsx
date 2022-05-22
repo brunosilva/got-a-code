@@ -48,7 +48,11 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
       }
     ]
   }
-  return <div className={style.container}></div>
+  return (
+    <div className={style.container}>
+      <span>{title}</span>
+    </div>
+  )
 }
 
 export default Organization
