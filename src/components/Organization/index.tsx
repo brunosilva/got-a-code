@@ -1,8 +1,10 @@
 // packages
-import React from 'react'
+import React, { useState } from 'react'
 
 // styles
 import style from './style.module.scss'
+import { IUser } from './type'
+import { dataUser } from './utils'
 
 interface IProps {
   title: string
@@ -11,46 +13,84 @@ interface IProps {
 }
 
 const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
-  const ds = {
-    id: 'n1',
-    level: 0,
-    name: 'Lao Lao',
-    title: 'general manager',
-    children: [
-      { id: 'n2', level: 1, name: 'Bo Miao', title: 'department manager' },
-      {
-        id: 'n3',
-        level: 1,
-        name: 'Su Miao',
-        title: 'department manager',
-        children: [
-          { id: 'n4', level: 2, name: 'Tie Hua', title: 'senior engineer' },
-          {
-            id: 'n5',
-            level: 2,
-            name: 'Hei Hei',
-            title: 'senior engineer',
-            children: [
-              { id: 'n6', name: 'Dan Dan', title: 'engineer' },
-              { id: 'n7', name: 'Xiang Xiang', title: 'engineer' }
-            ]
-          },
-          { id: 'n8', level: 2, name: 'Pang Pang', title: 'senior engineer' }
-        ]
-      },
-      { id: 'n9', level: 1, name: 'Hong Miao', title: 'department manager' },
-      {
-        id: 'n10',
-        level: 1,
-        name: 'Chun Miao',
-        title: 'department manager',
-        children: [{ id: 'n11', name: 'Yue Yue', title: 'senior engineer' }]
-      }
-    ]
-  }
+  const [main, setMain] = useState()
+
   return (
     <div className={style.container}>
-      <span>{title}</span>
+      <div className={style.row}>
+        <div className={`${style.content} ${style.lv0}`}>
+          <div className={style.position}>
+            <div className={style.user}>
+              <span>{dataUser.level === 0 && dataUser.name}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={style.row}>
+        <div className={style.bar}></div>
+        <div className={`${style.content} ${style.lv1}`}>
+          <div className={style.position}>
+            <div className={style.user}>
+              <span>{dataUser.level === 0 && dataUser.name}</span>
+            </div>
+          </div>
+          <div className={style.row}>
+            <div className={style.bar}></div>
+            <div className={`${style.content} ${style.lv2}`}>
+              <div className={style.position}>
+                <div className={style.user}>
+                  <span>{dataUser.level === 0 && dataUser.name}</span>
+                </div>
+              </div>
+            </div>
+            <div className={`${style.content} ${style.lv2}`}>
+              <div className={style.position}>
+                <div className={style.user}>
+                  <span>{dataUser.level === 0 && dataUser.name}</span>
+                </div>
+              </div>
+            </div>
+            <div className={`${style.content} ${style.lv2}`}>
+              <div className={style.position}>
+                <div className={style.user}>
+                  <span>{dataUser.level === 0 && dataUser.name}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`${style.content} ${style.lv1}`}>
+          <div className={style.position}>
+            <div className={style.user}>
+              <span>{dataUser.level === 0 && dataUser.name}</span>
+            </div>
+          </div>
+        </div>
+        <div className={`${style.content} ${style.lv1}`}>
+          <div className={style.position}>
+            <div className={style.user}>
+              <span>{dataUser.level === 0 && dataUser.name}</span>
+            </div>
+          </div>
+          <div className={style.row}>
+            <div className={style.bar}></div>
+            <div className={`${style.content} ${style.lv2}`}>
+              <div className={style.position}>
+                <div className={style.user}>
+                  <span>{dataUser.level === 0 && dataUser.name}</span>
+                </div>
+              </div>
+            </div>
+            <div className={`${style.content} ${style.lv2}`}>
+              <div className={style.position}>
+                <div className={style.user}>
+                  <span>{dataUser.level === 0 && dataUser.name}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
