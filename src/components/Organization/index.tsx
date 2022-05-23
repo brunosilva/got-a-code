@@ -42,48 +42,54 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
 
         {lv1 &&
           lv1.map(
-            (i: any) =>
+            (level1: any) =>
               (
-                <div className={`${style.content} ${style.lv1}`}>
+                <div
+                  className={`${style.content} ${style.lv1}`}
+                  key={level1.id}
+                >
                   <div className={style.position}>
                     <div className={style.user}>
-                      <span>{i.name}</span>
+                      <span>{level1.name}</span>
                     </div>
                   </div>
+                  {level1.children && (
+                    <div className={style.row}>
+                      <div className={style.bar}></div>
+                      {level1.children.map((level2: any) => (
+                        <div
+                          className={`${style.content} ${style.lv2}`}
+                          key={level2.id}
+                        >
+                          <div className={style.position}>
+                            <div className={style.user}>
+                              <span>{level2.name}</span>
+                            </div>
+                          </div>
+                          {level2.children && (
+                            <div className={style.row}>
+                              <div className={style.bar}></div>
+                              {level2.children.map((level3: any) => (
+                                <div
+                                  className={`${style.content} ${style.lv2}`}
+                                  key={level3.id}
+                                >
+                                  <div className={style.position}>
+                                    <div className={style.user}>
+                                      <span>{level3.name}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ) as any
           )}
-        {/* <div className={`${style.content} ${style.lv1}`}>
-          <div className={style.position}>
-            <div className={style.user}>
-              <span>{dataUser.level === 0 && dataUser.name}</span>
-            </div>
-          </div>
-          <div className={style.row}>
-            <div className={style.bar}></div>
-            <div className={`${style.content} ${style.lv1}`}>
-              <div className={style.position}>
-                <div className={style.user}>
-                  <span>{dataUser.level === 0 && dataUser.name}</span>
-                </div>
-              </div>
-            </div>
-            <div className={`${style.content} ${style.lv1}`}>
-              <div className={style.position}>
-                <div className={style.user}>
-                  <span>{dataUser.level === 0 && dataUser.name}</span>
-                </div>
-              </div>
-            </div>
-            <div className={`${style.content} ${style.lv1}`}>
-              <div className={style.position}>
-                <div className={style.user}>
-                  <span>{dataUser.level === 0 && dataUser.name}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   )
