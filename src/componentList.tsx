@@ -70,6 +70,7 @@ const ComponentList: React.FC = () => {
         title="Exemplo de Organograma"
         githubLink="https://github.com/brunosilva/got-a-code/tree/main/src/components/dateNavigation"
         size="lg"
+        showGithubLink={false}
       >
         <Organization title="Organograma" />
       </Component>

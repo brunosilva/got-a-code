@@ -9,9 +9,16 @@ interface IProps {
   githubLink: string
   size: string
   children: React.ReactNode
+  showGithubLink?: boolean
 }
 
-const Component: React.FC<IProps> = ({ title, githubLink, size, children }) => {
+const Component: React.FC<IProps> = ({
+  title,
+  githubLink,
+  size,
+  children,
+  showGithubLink = true
+}) => {
   const sizeComponent = [
     {
       key: 'sm',
@@ -34,9 +41,11 @@ const Component: React.FC<IProps> = ({ title, githubLink, size, children }) => {
       <div className={style.titleComponent}>{title}</div>
       <div className={style.componentView}>
         {children}
-        <a href={githubLink} target="_blank" rel="noreferrer" title="">
-          code github
-        </a>
+        {showGithubLink && (
+          <a href={githubLink} target="_blank" rel="noreferrer" title="">
+            code github
+          </a>
+        )}
       </div>
     </div>
   )
