@@ -1,10 +1,17 @@
-export const dataUser = {
+import { ITreeUser } from "./type";
+
+export const dataUser: ITreeUser = {
   id: 'n1',
   level: 0,
   name: 'Lao Lao',
   title: 'general manager',
   children: [
-    { id: 'n2', level: 1, name: 'Bo Miao', title: 'department manager' },
+    { 
+      id: 'n2', 
+      level: 1, 
+      name: 'Bo Miao', 
+      title: 'department manager'
+    },
     {
       id: 'n3',
       level: 1,
@@ -25,7 +32,12 @@ export const dataUser = {
         { id: 'n8', level: 2, name: 'Pang Pang', title: 'senior engineer' }
       ]
     },
-    { id: 'n9', level: 1, name: 'Hong Miao', title: 'department manager' },
+    { 
+      id: 'n9', 
+      level: 1, 
+      name: 'Hong Miao', 
+      title: 'department manager' 
+    },
     {
       id: 'n10',
       level: 1,
