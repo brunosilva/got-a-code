@@ -29,8 +29,8 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
   return (
     <div className={style.container}>
       <div className={style.row}>
-        <div className={`${style.content} ${style.lv0}`}>
-          <div className={style.position}>
+        <div className={style.content}>
+          <div className={`${style.position} ${style.lv0}`}>
             <div className={style.user}>
               <strong>{dataUser.level === 0 && dataUser.name}</strong>
               <div className={style.infos}>
@@ -46,11 +46,12 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
           lv1.map(
             (level1: any) =>
               (
-                <div
-                  className={`${style.content} ${style.lv1}`}
-                  key={level1.id}
-                >
-                  <div className={style.position}>
+                <div className={style.content} key={level1.id}>
+                  <div
+                    className={`${style.position} ${
+                      level1.children ? style.lvTwo : style.lvOne
+                    }`}
+                  >
                     <div className={style.user}>
                       <strong>{level1.name}</strong>
                       <div className={style.infos}>
@@ -62,11 +63,12 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
                   {level1.children && (
                     <div className={style.row}>
                       {level1.children.map((level2: any) => (
-                        <div
-                          className={`${style.content} ${style.lv2}`}
-                          key={level2.id}
-                        >
-                          <div className={style.position}>
+                        <div className={style.content} key={level2.id}>
+                          <div
+                            className={`${style.position} ${
+                              level2.children ? style.lvTwo : style.lvOne
+                            }`}
+                          >
                             <div className={style.user}>
                               <strong>{level2.name}</strong>
                               <div className={style.infos}>
@@ -78,11 +80,14 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
                           {level2.children && (
                             <div className={style.row}>
                               {level2.children.map((level3: any) => (
-                                <div
-                                  className={`${style.content} ${style.lv2}`}
-                                  key={level3.id}
-                                >
-                                  <div className={style.position}>
+                                <div className={style.content} key={level3.id}>
+                                  <div
+                                    className={`${style.position} ${
+                                      level3.children
+                                        ? style.lvTwo
+                                        : style.lvOne
+                                    }`}
+                                  >
                                     <div className={style.user}>
                                       <strong>{level3.name}</strong>
                                       <div className={style.infos}>
