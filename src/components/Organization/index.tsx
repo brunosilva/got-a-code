@@ -32,14 +32,16 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
         <div className={`${style.content} ${style.lv0}`}>
           <div className={style.position}>
             <div className={style.user}>
-              <span>{dataUser.level === 0 && dataUser.name}</span>
+              <strong>{dataUser.level === 0 && dataUser.name}</strong>
+              <div className={style.infos}>
+                <strong>{dataUser.level === 0 && dataUser.name}</strong>
+                <span>{dataUser.title}</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className={style.row}>
-        <div className={style.bar}></div>
-
         {lv1 &&
           lv1.map(
             (level1: any) =>
@@ -50,12 +52,15 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
                 >
                   <div className={style.position}>
                     <div className={style.user}>
-                      <span>{level1.name}</span>
+                      <strong>{level1.name}</strong>
+                      <div className={style.infos}>
+                        <strong>{level1.name}</strong>
+                        <span>{level1.title}</span>
+                      </div>
                     </div>
                   </div>
                   {level1.children && (
                     <div className={style.row}>
-                      <div className={style.bar}></div>
                       {level1.children.map((level2: any) => (
                         <div
                           className={`${style.content} ${style.lv2}`}
@@ -63,12 +68,15 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
                         >
                           <div className={style.position}>
                             <div className={style.user}>
-                              <span>{level2.name}</span>
+                              <strong>{level2.name}</strong>
+                              <div className={style.infos}>
+                                <strong>{level2.name}</strong>
+                                <span>{level2.title}</span>
+                              </div>
                             </div>
                           </div>
                           {level2.children && (
                             <div className={style.row}>
-                              <div className={style.bar}></div>
                               {level2.children.map((level3: any) => (
                                 <div
                                   className={`${style.content} ${style.lv2}`}
@@ -76,7 +84,11 @@ const Organization: React.FC<IProps> = ({ title, subtitle, description }) => {
                                 >
                                   <div className={style.position}>
                                     <div className={style.user}>
-                                      <span>{level3.name}</span>
+                                      <strong>{level3.name}</strong>
+                                      <div className={style.infos}>
+                                        <strong>{level3.name}</strong>
+                                        <span>{level3.title}</span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>

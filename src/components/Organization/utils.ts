@@ -10,15 +10,15 @@ export const dataUser: ITreeUser = {
       id: 'n2', 
       level: 1, 
       name: 'Blz blz', 
-      title: 'department manager'
+      title: 'design'
     },
     {
       id: 'n3',
       level: 1,
       name: 'Tô suave',
-      title: 'department manager',
+      title: 'front-end',
       children: [
-        { id: 'n4', level: 2, name: 'Tia Hua', title: 'senior engineer' },
+        { id: 'n4', level: 2, name: 'Tia Hua', title: 'pleno engineer' },
         {
           id: 'n5',
           level: 2,
@@ -29,20 +29,20 @@ export const dataUser: ITreeUser = {
             { id: 'n7', name: 'Zas zas', title: 'engineer' }
           ]
         },
-        { id: 'n8', level: 2, name: 'Ping Pong', title: 'senior engineer' }
+        { id: 'n8', level: 2, name: 'Ping Pong', title: 'junior engineer' }
       ]
     },
     { 
       id: 'n9', 
       level: 1, 
       name: 'Miao miao', 
-      title: 'department manager' 
+      title: 'manager' 
     },
     {
       id: 'n10',
       level: 1,
       name: 'Au au',
-      title: 'department manager',
+      title: 'back-end',
       children: [{ id: 'n11', name: 'Yeah Yeah', title: 'senior engineer' }]
     }
   ]
