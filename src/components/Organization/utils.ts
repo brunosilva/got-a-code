@@ -1,6 +1,6 @@
-import { ITreeUser } from "./type";
+import { IUser } from "./type";
 
-export const dataUser: ITreeUser = {
+export const dataUser: IUser = {
   id: 'n1',
   level: 0,
   name: 'Lao Lao',
@@ -10,7 +10,21 @@ export const dataUser: ITreeUser = {
       id: 'n2', 
       level: 1, 
       name: 'Blz blz', 
-      title: 'design'
+      title: 'design',
+      children: [
+        { id: 'n4', level: 2, name: 'Tia Hua', title: 'pleno engineer' },
+        {
+          id: 'n5',
+          level: 2,
+          name: 'Hei Hei',
+          title: 'senior engineer',
+          children: [
+            { id: 'n6', name: 'Dan Dan', title: 'engineer' },
+            { id: 'n7', name: 'Zas zas', title: 'engineer' }
+          ]
+        },
+        { id: 'n8', level: 2, name: 'Ping Pong', title: 'junior engineer' }
+      ]
     },
     {
       id: 'n3',

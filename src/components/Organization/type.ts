@@ -3,42 +3,13 @@ export interface IUser {
   level: number;
   name: string;
   title: string;
-  children?: [{}];
+  children?: IChildrenUser[];
 }
-export interface ITreeUser {
+
+interface IChildrenUser {
   id: string;
-  level: number;
+  level?: number;
   name: string;
   title: string;
-  children: [
-    { id: string; level: number; name: string; title: string; },
-    {
-      id: string;
-      level: number;
-      name: string;
-      title: string;
-      children: [
-        { id: string; level: number; name: string; title: string; },
-        {
-          id: string;
-          level: number;
-          name: string;
-          title: string;
-          children: [
-            { id: string; name: string; title: string; },
-            { id: string; name: string; title: string; }
-          ]
-        },
-        { id: string; level: number; name: string; title: string; }
-      ]
-    },
-    { id: string; level: number; name: string; title: string; },
-    {
-      id: string;
-      level: number;
-      name: string;
-      title: string;
-      children: [{ id: string; name: string; title: string; }]
-    }
-  ]
+  children?: IChildrenUser[];
 }
