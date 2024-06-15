@@ -2,16 +2,15 @@
 import React from 'react'
 
 // components
+import Accordion from './components/Accordion'
+import BarcodeValidate from './components/barcodeValidate'
 import Circle from './components/progress-bar/circle'
 import Title from './components/title'
 import Tooltip from './components/tooltip'
-import Accordion from './components/Accordion'
-import BarcodeValidate from './components/barcodeValidate'
-import Organization from './components/Organization'
 
 // styles
-import style from './style.module.scss'
 import Component from './components/Component'
+import style from './style.module.scss'
 
 const ComponentList: React.FC = () => {
   return (
@@ -71,7 +70,7 @@ const ComponentList: React.FC = () => {
         githubLink="https://github.com/brunosilva/got-a-code/tree/main/src/components/dateNavigation"
         size="lg"
       >
-        <Organization title="Organograma" />
+        <span>Editor Text</span>
       </Component>
     </div>
   )
